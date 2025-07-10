@@ -12,30 +12,35 @@
 
     <title>Login PHP</title>
     <!-- Título da aba do navegador -->
+
+     <link rel="stylesheet" href="style.css">
+         <!-- referencia css -->
 </head>
 <body>
-    <h2>Login</h2>
-    <!-- Título da seção de login -->
-
-    <!-- Formulário com id "loginForm", que será capturado no JavaScript -->
-    <form id="loginForm">
-        <!-- Campo de texto para o nome de usuário -->
-        <label>Usuario:
-            <input type="text" id="usuario" required>
-        </label><br>
-
-        <!-- Campo de senha com id "senha" -->
-        <label>Senha:
-            <input type="password" id="senha" required>
-        </label><br>
-
-        <!-- Botão para enviar o formulário -->
-        <button type="submit">Entrar</button>
-    </form>
-
-    <!-- Parágrafo para exibir a mensagem de resposta (sucesso ou erro) -->
-    <p id="mensagem"></p>
     
+    <div id="login-container"><!-- container do form -->
+        <h2>Login com PHP</h2>
+        <!-- Título da seção de login -->
+
+        <!-- Formulário com id "loginForm", que será capturado no JavaScript -->
+        <form id="loginForm">
+            <!-- Campo de texto para o nome de usuário -->
+            <label><b>Usuario:</b>
+                <input type="text" id="usuario" placeholder="Digite seu nome de usuario" required>
+            </label><br>
+
+            <!-- Campo de senha com id "senha" -->
+            <label><b>Senha:</b>
+                <input type="password" id="senha" placeholder="Digite sua senha" required>
+            </label><br>
+
+            <!-- Botão para enviar o formulário -->
+            <button type="submit">Entrar</button>
+        </form>
+
+        <!-- Parágrafo para exibir a mensagem de resposta (sucesso ou erro) -->
+        <p id="mensagem"></p>
+    </div>
     <script>
         // Pega o formulário pelo ID
         const form = document.getElementById('loginForm'); 

@@ -1,9 +1,9 @@
 <?php
 // Dados de conexão com o banco
-$host = "localhost";            // Host do banco 
+$host = "";            // Host do banco 
 $db   = "";            // Nome do banco de dados
-$user = "";                 // Usuário do banco 
-$pass = "";          // Dados ficticios
+$user = "";            // Usuário do banco 
+$pass = "";            // Dados ficticios
 
 // Cria conexão com o banco usando a classe mysqli
 $conn = new mysqli($host, $user, $pass, $db);
