@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- Define  o doc HTML5 -->
+<html lang="pt-BR">
+<!-- Define o idioma principal da página como português, Brasil -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Define o conjunto de caracteres como UTF-8 (suporta acentuação) -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ajusta a escala para dispositivos móveis -->
+
+    <title>Login PHP</title>
+    <!-- Título da aba do navegador -->
+</head>
+<body>
+    <h2>Login</h2>
+    <!-- Título da seção de login -->
+
+    <!-- Formulário com id "loginForm", que será capturado no JavaScript -->
+    <form id="loginForm">
+        <!-- Campo de texto para o nome de usuário -->
+        <label>Usuario:
+            <input type="text" id="usuario" required>
+        </label><br>
+
+        <!-- Campo de senha com id "senha" -->
+        <label>Senha:
+            <input type="password" id="senha" required>
+        </label><br>
+
+        <!-- Botão para enviar o formulário -->
+        <button type="submit">Entrar</button>
+    </form>
+
+    <!-- Parágrafo para exibir a mensagem de resposta (sucesso ou erro) -->
+    <p id="mensagem"></p>
+    
+    <script>
+        // Pega o formulário pelo ID
+        const form = document.getElementById('loginForm'); 
+
+        // Adiciona um ouvinte de evento pra interceptar o envio do form
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Evita que a página seja recarregada ao enviar
+
+            // Coleta os valores digitados nos campos
+            const user = document.getElementById('usuario').value;
+            const pass = document.getElementById('senha').value;
+
+            // Envia os dados via POST para o PHP usando fetch()
+            const resposta = await fetch('verificar_login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                // Codifica os dados para envio no formato de formulário tradicional
+                body: `usuario=${encodeURIComponent(user)}&senha=${encodeURIComponent(pass)}`
+            });
+
+            // Lê a resposta do servidor como texto
+            const resultado = await resposta.text();
+
+            // Mostra a resposta no parágrafo com id "mensagem"
+            document.getElementById('mensagem').textContent = resultado;
+        });
+    </script>
+</body>
+</html>
