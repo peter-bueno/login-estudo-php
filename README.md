@@ -4,7 +4,15 @@ Esse projeto é uma tela de login simples, feita em **PHP com MySQL**, usando **
 Estou em processo de aprendizagem com a linguagem, mas com foco em aprendizado constante — e esse projetinho é parte desse caminho!
 
 ---
+🖼️ ### Prints do projeto
+![login sucesso](prints/login_sucesso.png)
+✅ Tela de login (visual principal)
 
+❌ Mensagem de erro (usuário ou senha inválido)
+
+✅ Login realizado com sucesso
+
+🛢️ Estrutura da tabela no banco de dados (phpMyAdmin)
 ##  Tecnologias usadas
 
 - PHP (8.2)
